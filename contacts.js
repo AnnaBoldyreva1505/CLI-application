@@ -9,7 +9,6 @@ async function listContacts() {
   try {
     const contacts = await fs.readFile(contactsPath);
     const contactList = JSON.parse(contacts);
-    // console.log(contactList);
     return contactList;
   } catch (error) {
     console.log(error);
@@ -17,7 +16,6 @@ async function listContacts() {
 }
 
 async function getContactById(contactId) {
-  // ...твой код. Возвращает объект контакта с таким id. Возвращает null, если объект с таким id не найден.
   try {
     const contacts = JSON.parse(await fs.readFile(contactsPath));
     const findContactById = contacts.filter(
@@ -27,7 +25,6 @@ async function getContactById(contactId) {
     if (!findContactById) {
       return null;
     }
-    // console.log(findContactById);
     return findContactById;
   } catch (error) {
     console.log(error);
